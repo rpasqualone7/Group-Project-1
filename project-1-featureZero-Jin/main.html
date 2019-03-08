@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bins-Main</title>
+
+    <!--Bootstrap & CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+     crossorigin="anonymous">
+     <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container-fluid" id="wrap">
+        <!-- Nav-->
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="header">
+                <h3 id="title">Bins</h3>
+            </div>
+        </div>
+        
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <!-- <div class="navbar-header">
+                </div> -->
+                <form class="form-inline">
+                    <ul class="nav justify-content-end">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="main.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Profile.html">Profile</a>
+                        </li>
+                    </ul>
+                </form>
+            </nav>
+        </div>
+        <!-- search bar for locations--> 
+        
+        <div class="jumbotron">
+            <div class="container">
+                <div class="container bg-white">
+                    <div class="text-success ">
+                        <h2>Login</h2>
+                    </div>
+                    <hr>
+                    <div class="column">
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                            <form id="location-form">
+                                <fieldset>
+                                    <label for="location-input">Add location</label>
+                                    <br>
+                                    <input type="text" placeholder="Lets help ... " id="location-input">
+                                    <br>
+                                    <input  id="add-location" type="Submit" value="submit">
+                                    </button>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         
+        <!--Section for where dynamic map will be-->
+        <div class ="mapGenerator"></div>
+        <!-- section where groups will be. Then, button to join a group. This will push you to the profile page?-->
+        
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div>
+            <span class="footer2">Bins</span>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/javascript/script.js"></script>
+</body>
+</html>
