@@ -1,18 +1,66 @@
 // Initialize Firebase
 var config = {
-    apiKey: "AIzaSyApwHaj1nMO7N6J5iYk2FjLs5izzFxIjZM",
-    authDomain: "bins-4ba2b.firebaseapp.com",
-    databaseURL: "https://bins-4ba2b.firebaseio.com",
-    projectId: "bins-4ba2b",
-    storageBucket: "bins-4ba2b.appspot.com",
-    messagingSenderId: "518275104475"
-  };
-  firebase.initializeApp(config);
+  apiKey: "AIzaSyApwHaj1nMO7N6J5iYk2FjLs5izzFxIjZM",
+  authDomain: "bins-4ba2b.firebaseapp.com",
+  databaseURL: "https://bins-4ba2b.firebaseio.com",
+  projectId: "bins-4ba2b",
+  storageBucket: "bins-4ba2b.appspot.com",
+  messagingSenderId: "518275104475"
+};
+firebase.initializeApp(config);
 
 var dataRef = firebase.database();
 
+// function initMap() {
+//   // The location of Uluru
+//   var uluru = {lat: -25.344, lng: 131.036};
+//   // The map, centered at Uluru
+//   var map = new google.maps.Map(
+//       document.getElementById('map'), {zoom: 4, center: uluru});
+//   // The marker, positioned at Uluru
+//   var marker = new google.maps.Marker({position: uluru, map: map});
+// }
+var map, infoWindow;
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: { lat: -34.397, lng: 150.644 },
+    zoom: 6
+  });
+  infoWindow = new google.maps.InfoWindow;
 
+  // Try HTML5 geolocation.
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+      infoWindow.setPosition(pos);
+      var marker = new google.maps.Marker({
+        position: pos,
+        map: map,
+        title: 'Hello World!'
+      });
+      // if you want this, center the map.  Else remove next line
+      map.setCenter(pos);          
+    }, 
+    function () {
+      handleLocationError(true, infoWindow, map.getCenter());
+    });
+  } else {
+    // Browser doesn't support Geolocation
+    handleLocationError(false, infoWindow, map.getCenter());
+  }
+}
 
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+  infoWindow.setPosition(pos);
+  infoWindow.setContent(browserHasGeolocation ?
+    'Error: The Geolocation service failed.' :
+    'Error: Your browser doesn\'t support geolocation.');
+  infoWindow.open(map);
+}
+initMap();
 //need to create a min. of 3 html pages (Login Page, Main page, Profile Page)
 
 //Saturday

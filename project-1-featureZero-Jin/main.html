@@ -9,7 +9,7 @@
     <!--Bootstrap & CSS-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
      crossorigin="anonymous">
-     <link rel="stylesheet" href="style/reset.css">
+     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
@@ -67,7 +67,7 @@
             </div>
          
         <!--Section for where dynamic map will be-->
-        <div class ="mapGenerator"></div>
+        <div id="map"></div>
         <!-- section where groups will be. Then, button to join a group. This will push you to the profile page?-->
         
     </div>
@@ -78,7 +78,10 @@
             <span class="footer2">Bins</span>
         </div>
     </footer>
-
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQbMZwhRSBeX3-LCDgDLzHgp6UwnLXA70">
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/javascript/script.js"></script>
 </body>

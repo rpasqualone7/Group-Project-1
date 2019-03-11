@@ -50,3 +50,7 @@ html {
   .footer {
       font-size: .8em;
   }
+  #map {
+    height: 400px; 
+    width: 100%; 
+   }
