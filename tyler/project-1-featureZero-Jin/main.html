@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>When Your Bored?</title>
+
+    <!--Bootstrap & CSS-->
+    <link rel="icon" type="image/png" href="Assets/images/mainimage.png" />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+      integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+      crossorigin="anonymous"
+    />
+   
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="externallibs/css/jquery.fullPage.2.css" />
+    <link rel="stylesheet" href="externallibs/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="externallibs/css/animate.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    
+  </head>
+<body>
+  <div class="jumbotron text-center">
+    
+    
+      <h1>When Your Bored?</h1>
+
+      <div class="container">
+        <!-- Button to open the modal login form -->
+        <button onclick="document.getElementById('id01').style.display='block'">
+          Login
+        </button>
+
+        <!-- The Modal -->
+        <div id="id01" class="modal">
+          <span
+            onclick="document.getElementById('id01').style.display='none'"
+            class="close"
+            title="Close Modal"
+            >&times;</span
+          >
+
+          <!-- Modal Content -->
+          <form class="modal-content animate" action="/action_page.php">
+             <div class="imgcontainer">
+              <img
+                src="Assets/images/mainimage.png"
+                width="100"
+                height="100"
+              />
+            </div>
+            <div class="imgcontainer">
+              <img
+                src="Assets/images/logo.png"
+                alt="Avatar"
+                class="avatar"
+                width="900"
+                height="200"
+              />
+            </div>
+           
+
+            <div class="container">
+              <label for="uname"><b>Username</b></label>
+              <input
+                type="text"
+                placeholder="Enter Username"
+                name="uname"
+                required
+              />
+              <br />
+              
+              <label for="psw"><b>Password</b></label>
+              <input
+                type="password"
+                placeholder="Enter Password"
+                name="psw"
+                required
+              />
+              <br />
+              <button type="submit" class="login" onclick="myFunction2()">Login</button>
+             
+              <label>
+                <input type="checkbox" checked="checked" name="remember" />
+                Remember me
+              </label>
+            </div>
+            
+            <br />
+            
+            <button onclick="myFunction()">
+                Sign up</button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+          </div>
+          <script>
+              function myFunction() {
+                location.assign("signup.html");
+              }
+              </script>
+               <script>
+                  function myFunction2() {
+                    location.assign("home.html");
+                  }
+                  </script>
+          <br />
+            
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>  
+</html>
+
+<script>
+  // Get the modal
+  var modal = document.getElementById("id01");
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+</script>

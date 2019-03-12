@@ -1,0 +1,81 @@
+
+* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(255, 189, 67); /* Fallback color */
+    background-color:  rgb(255, 189, 67); /* Black w/ opacity */
+    padding-top: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+  }
+  
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #ffb109;
+    margin: 5px auto; /* 15% from the top and centered */
+    border: 1px solid rgb(255, 225, 92);
+    width: 80%; /* Could be more or less, depending on screen size */
+    padding-top: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .container {
+    margin: 5px auto; /* 15% from the top and centered */
+    border: 1px solid rgb(255, 225, 92);
+    width: 80%; /* Could be more or less, depending on screen size */
+    padding-top: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  
+  /* The Close Button */
+  .close {
+    /* Position it in the top right corner outside of the modal */
+    position: absolute;
+    right: 25px;
+    top: 0; 
+    margin: 5px auto;
+    color: rgb(255, 160, 19);
+    font-size: 35px;
+    font-weight: bold;
+    padding-top: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  
+  /* Close button on hover */
+  .close:hover,
+  .close:focus {
+    color: orangered;
+    cursor: pointer;
+  }
+  
+  /* Add Zoom Animation */
+  .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+  }
+  
+  @-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+  }
+  
+  @keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+  }
