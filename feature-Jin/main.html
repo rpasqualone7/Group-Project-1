@@ -8,12 +8,12 @@
     <title>Activity Generator</title>
 
     <!--CSS& Bootstrap-->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
     <!--Need GoogleMaps API-->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQbMZwhRSBeX3-LCDgDLzHgp6UwnLXA70&libraries=places&callback=initAutocomplete"
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQbMZwhRSBeX3-LCDgDLzHgp6UwnLXA70&libraries=places&"
 async defer></script>
 </head>
 
@@ -75,12 +75,13 @@ async defer></script>
     <button id="getWeatherForcast">Check The Weather</button>
 
     <div id="showWeatherForcast"></div>
-
+</section>
     <!--MAP API HTML-->
+<div class="map">
     <input id="pac-input" class="controls" type="text" placeholder="Search Box">
     <div id="map"></div>
+</div>
 
-</section>
 
 <!--jQuery-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
