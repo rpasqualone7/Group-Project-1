@@ -1,22 +1,23 @@
-// Initialize Firebase
-var config = {
-  apiKey: "AIzaSyApwHaj1nMO7N6J5iYk2FjLs5izzFxIjZM",
-  authDomain: "bins-4ba2b.firebaseapp.com",
-  databaseURL: "https://bins-4ba2b.firebaseio.com",
-  projectId: "bins-4ba2b",
-  storageBucket: "bins-4ba2b.appspot.com",
-  messagingSenderId: "518275104475"
-};
-firebase.initializeApp(config);
-// A variable to reference the database.
-var dataRef = firebase.database();
-var name;
-var location;
-var activity;
-var email ;
 
 //on click after, entering info to form. This info will get pushed to user info section in firebase. displayed on the main html page. 
 $(document).ready(function(){
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyApwHaj1nMO7N6J5iYk2FjLs5izzFxIjZM",
+    authDomain: "bins-4ba2b.firebaseapp.com",
+    databaseURL: "https://bins-4ba2b.firebaseio.com",
+    projectId: "bins-4ba2b",
+    storageBucket: "bins-4ba2b.appspot.com",
+    messagingSenderId: "518275104475"
+  };
+  firebase.initializeApp(config);
+  // A variable to reference the database.
+  var dataRef = firebase.database();
+  var name;
+  var location;
+  var activity;
+  var email ;
+  
   $("#add-user").on("click", function() {
       event.preventDefault();
       // Storing and retreiving new user data
@@ -26,7 +27,7 @@ $(document).ready(function(){
       email = $("#email").val().trim();
 
       // Pushing to database
-      database.ref().push({
+      dataRef.ref().push({
           name: name,
           location: location,
           activity: activity,
@@ -37,7 +38,7 @@ $(document).ready(function(){
   });
 
 
-    database.ref().on("child_added", function(childSnapshot) {
+    dataRef.ref().on("child_added", function(childSnapshot) {
  
     $("#add-row").append("<tr><td>" + childSnapshot.val().name +
     "</td><td>" + childSnapshot.val().location +
@@ -49,7 +50,7 @@ $(document).ready(function(){
     console.log("Errors handled: " + errorObject.code);
     });
 
-    database.ref().orderByChild("userAdded").limitToLast(1).on("child_added", function(snapshot) {
+    dataRef.ref().orderByChild("userAdded").limitToLast(1).on("child_added", function(snapshot) {
       
         $("#name-display").html(snapshot.val().name);
         $("#email-display").html(snapshot.val().email);
@@ -125,8 +126,9 @@ function initAutocomplete() {
     });
     map.fitBounds(bounds);
   });
+  console.log('ok')
 }
-
+google.maps.event.addDomListener(window, "load", initAutocomplete);
 
 $(document).ready(function(){
     $("#getWeatherForcast").click(function(){
