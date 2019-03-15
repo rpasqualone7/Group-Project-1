@@ -1,16 +1,57 @@
-/* Custom Stylesheet */
-/**
- * Use this file to override Materialize files so you can update
- * the core Materialize files in the future
- *
- * Made By MaterializeCSS.com
- */
-/* Kens csss*/
+/*Tyler CSS */
+@import url(https://fonts.googleapis.com/css?family=Fjalla+One);
+ html {
+	 height: 100%;
+}
+ body {
+	 font-family: 'Fjalla One', sans-serif;
+	 background: linear-gradient(to bottom, #405166 0%, #656f6f 100%);
+}
+ .container {
+	 transform: translate(-50%, -50%);
+	 top: 50%;
+	 left: 30%;
+	 display: block;
+	 position: absolute;
+	 max-width: 225px;
+}
+ .button {
+	 float: center;
+	 position: relative;
+	 bottom: -65px;
+	 left: 50%;
+	 transform: translateX(-50%) rotate(-10deg);
+	 color: #e55643;
+	 text-transform: uppercase;
+	 opacity: 0;
+	 visibility: hidden;
+	 cursor: pointer;
+}
+ .button span {
+	 transform: skew(-10deg);
+	 display: block;
+	 float: left;
+	 text-shadow: #533d4a 1px 1px, #533d4a 2px 2px, #533d4a 3px 3px, #533d4a 4px 4px;
+}
+ h1 {
+	 color: #fff;
+	 text-transform: uppercase;
+   font-size: 32px;
+ }
+
+ /* Kens csss*/
+.map{
+
+  position: absolute;
+height:500px;
+width: 500px;
+right : 200px;
+top: 250px;
+}
  #map {
-  position: relative;
   border: 5px, outset;
-  height: 400px;
-  width:1070px;
+   position: relative;
+  height: 100%;
 }
 /* Optional: Makes the sample page fill the window. */
 #description {
@@ -82,48 +123,4 @@
 }
 #target {
   width: 345px;
-}
-p {
-  line-height: 2rem;
-}
-
-.sidenav-trigger {
-  color: #26a69a;
-}
-
-.parallax-container {
-  min-height: 380px;
-  line-height: 0;
-  height: auto;
-  color: rgba(255,255,255,.9);
-}
-  .parallax-container .section {
-    width: 100%;
-  }
-
-@media only screen and (max-width : 992px) {
-  .parallax-container .section {
-    position: absolute;
-    top: 40%;
-  }
-  #index-banner .section {
-    top: 10%;
-  }
-}
-
-@media only screen and (max-width : 600px) {
-  #index-banner .section {
-    top: 0;
-  }
-}
-
-.icon-block {
-  padding: 0 15px;
-}
-.icon-block .material-icons {
-  font-size: inherit;
-}
-
-footer.page-footer {
-  margin: 0;
 }
