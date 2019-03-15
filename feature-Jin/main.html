@@ -2,93 +2,195 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Activity Generator</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Parallax Template - Materialize</title>
 
-    <!--CSS& Bootstrap-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <!--Need to add the map css-->
+
     <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
     <!--Need GoogleMaps API-->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQbMZwhRSBeX3-LCDgDLzHgp6UwnLXA70&libraries=places&"
-async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQbMZwhRSBeX3-LCDgDLzHgp6UwnLXA70&libraries=places&" async
+        defer></script>
 </head>
 
-</table>
-<div class="panel panel-dark text-dark">
-    <div class="panel-heading">
-        <h3>Vistors Input</h3>
+<body>
+    <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <br>
+                <br>
+                <h1 class="header center teal-text text-lighten-2">When Your Bored</h1>
+                <div class="row center">
+                    <h3 class="header col s12 light">Move</h3>
+                </div>
+                <br>
+                <br>
+            </div>
+        </div>
+        <div class="parallax">
+            <img src="assets/images/background1.jpg" alt="Unsplashed background img 1">
+        </div>
     </div>
-    <div class="panel-body">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Location</th>
-                    <th>Things You Like To Do</th>
-                    <th>Email</th>
-                </tr>
-            </thead>
 
-            <tbody id="add-row">
-            </tbody>
-        </table>
+    <div class="container">
+        <div class="section">
+            <table class="table">
+                    <h4>Community Info</h4>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Location</th>
+                        <th>Things You Like To Do</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+
+                <tbody id="add-row">
+                </tbody>
+            </table>
+
+        </div>
     </div>
-</div>
 
-<br>
-<section class="container">
-    <form>
-        <div class="form-group">
-            <label for="text">Name</label>
-            <input type="text" class="form-control" id="user-name">
+    <div class="container">
+        <div class="section">
+            <!--MAP API HTML-->
+            <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+            <div id="map"></div>
         </div>
-
-        <div class="form-group">
-            <label for="text">Location</label>
-            <input type="text" class="form-control" id="location">
-        </div>
-
-        <div class="form-group">
-            <label for="text">Thing you like to do</label>
-            <input type="text" class="form-control" id="activity">
-        </div>
-
-        <div class="form-group">
-            <label for="text">Email</label>
-            <input type="text" class="form-control" id="email">
-        </div>
-
-        <button type="submit" class="btn btn-dark" id="add-user">Submit</button>
-    </form>
     </div>
-    <br>
 
-    <!--Weather API HTML-->
-    <br>
-    <input id="city"></input>
-    <br>
+    <div class="container">
+        <div class="section">
+            <div class="row">
+                <div class="col s12 center">
+                    <h3>
+                        <i class="mdi-content-send brown-text"></i>
+                    </h3>
+                    <h4>User Info</h4>
+                    <form p class="left-align light">
+                        <div class="form-group">
+                            <label for="text">Name</label>
+                            <input type="text" class="form-control" id="user-name">
+                        </div>
 
-    <button id="getWeatherForcast">Check The Weather</button>
+                        <div class="form-group">
+                            <label for="text">Location</label>
+                            <input type="text" class="form-control" id="location">
+                        </div>
 
-    <div id="showWeatherForcast"></div>
-</section>
-    <!--MAP API HTML-->
-<div class="map">
-    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-    <div id="map"></div>
-</div>
+                        <div class="form-group">
+                            <label for="text">Thing you like to do</label>
+                            <input type="text" class="form-control" id="activity">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="text">Email</label>
+                            <input type="text" class="form-control" id="email">
+                        </div>
+
+                        <button type="submit" class="btn btn-dark" id="add-user">Submit</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <!--Weather API HTML-->
+                <br>
+                <input id="city"></input>
+                <br>
+
+                <button id="getWeatherForcast">Check The Weather</button>
+
+                <div id="showWeatherForcast"></div>
+            </div>
+        </div>
+    </div>
 
 
-<!--jQuery-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!--jS-->
-<script src="assets/javascript/script.js"></script>
-<!--weather API-->
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+
+    <div class="parallax-container valign-wrapper">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <div class="row center">
+                    <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+                </div>
+            </div>
+        </div>
+        <div class="parallax">
+            <img src="assets/images/background3.jpg" alt="Unsplashed background img 3">
+        </div>
+    </div>
+
+    <footer class="page-footer teal">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Company Bio</h5>
+                    <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would
+                        help support and continue development on this project and is greatly appreciated.</p>
+
+
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">Settings</h5>
+                    <ul>
+                        <li>
+                            <a class="white-text" href="#!">Link 1</a>
+                        </li>
+                        <li>
+                            <a class="white-text" href="#!">Link 2</a>
+                        </li>
+                        <li>
+                            <a class="white-text" href="#!">Link 3</a>
+                        </li>
+                        <li>
+                            <a class="white-text" href="#!">Link 4</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">Connect</h5>
+                    <ul>
+                        <li>
+                            <a class="white-text" href="#!">Link 1</a>
+                        </li>
+                        <li>
+                            <a class="white-text" href="#!">Link 2</a>
+                        </li>
+                        <li>
+                            <a class="white-text" href="#!">Link 3</a>
+                        </li>
+                        <li>
+                            <a class="white-text" href="#!">Link 4</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                Made by
+                <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!--  Scripts-->
+    <!--jQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--jS-->
+    <script src="assets/javascript/script.js"></script>
+    <!--weather API-->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <script src="assets/javascript/materialize.js"></script>
+    <script src="assets/javascript/init.js"></script>
 
 </body>
 
