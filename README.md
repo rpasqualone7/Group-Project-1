@@ -1,0 +1,7 @@
+"When Your Bored"
+A user-friendly app that provides resources to users that are looking for activties.
+Users can also share activties and produce resources for other users.
+
+Designed using materialize css incorporated with two APIS:
+OpenWeather
+Google MAP
