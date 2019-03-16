@@ -25,6 +25,28 @@ $(document).ready(function(){
       location = $("#location").val().trim();
       activity = $("#activity").val().trim();
       email = $("#email").val().trim();
+      var city = $("#location").val();
+      var key = "f08b7ad219b2e1f12fdb28db902fa0fe";
+
+      $.ajax({
+          url: "https://api.openweathermap.org/data/2.5/weather",
+          dataType: "json",
+          type: "GET",
+          data: {q:city, appid: key, units: "imperial"},
+
+          success: function(data){
+              var wf = "";
+              $.each(data.weather, function(index, val){
+                  wf += "<p><b>" + data.name + "</b><img src='assets/images/" + val.icon + ".png'></p>" +
+                  data.main.temp + "&deg;F " + " | " + val.main + ", " + val.description
+
+              });
+              $("#showWeatherForcast").html(wf)
+              console.log(data)
+              console.log(wf)
+          }
+
+      });
 
       // Pushing to database
       dataRef.ref().push({
