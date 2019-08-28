@@ -1,4 +1,4 @@
-"WHEN YOUR'RE BORED"
+"WHEN YOU'RE BORED"
 
 A user-friendly app that provides resources to users that are looking for activties.
 Users can also share activties and produce resources for other users.
